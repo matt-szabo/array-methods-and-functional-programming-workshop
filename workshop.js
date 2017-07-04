@@ -257,11 +257,18 @@ function pluck(property, arrayOfObjects) {
     return findings;
 }
 
+
+
 function flatten(theArray) {
-
-return theArray.join();
-
-
+    var ret = [];
+    for(var i = 0; i < theArray.length; i++) {
+        if(Array.isArray(theArray[i])) {
+            ret = ret.concat(flatten(theArray[i]));
+        } else {
+            ret.push(theArray[i]);
+        }
+    }
+    return ret;
 }
 
 function negate1(predicate) {
