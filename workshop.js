@@ -105,11 +105,6 @@ return false;
 Make this function return the index of the first item in the input array that is === to the input item. If no item in the input array is === to the input item, then return -1. For example:
 */
 
-
-
-
-
-
 function indexOf(item, theArray) {
   var index = -1;
     if(typeof theArray === "undefined" && theArray == null && theArray.length < 0)
@@ -129,25 +124,116 @@ function indexOf(item, theArray) {
 return index;
 }
 
-var fruits = ['orange','apple','banana','apple'];
+/*var fruits = ['orange','apple','banana','apple'];
 
 var i = indexOf('apple', fruits); // 1
 console.log(i);
 var j = indexOf('pineapple', fruits); // -1
 console.log(j);
 
-//indexOf('anything', [])); // -1
+
+
+/*
+Make this function return the index of the first item in the input array for which the predicate function returns true. Return -1 if no matching item is found. For example:
+
+var pets = [
+    {id: 33, name: 'popcorn', species: 'dog'},
+    {id: 46, name: 'purrito', species: 'cat'},
+    {id: 47, name: 'bob', species: 'fish'},
+    {id: 49, name: 'nacho', species: 'dog'}
+];
+
+function isDog(item) {
+    return item.species === 'dog';
+}
+
+var firstDogIndex = findIndex(isDog, pets);
+After successfully implementing the function, explain in your own words why we need findIndex when we already have indexOf. They're two functions that return an array index based on a condition, but there is a fundamental difference between them.
+
+Hint: it is related to how === works with objects.
+
+*/
+
+var pets = [
+    {id: 33, name: 'popcorn', species: 'dog'},
+    {id: 46, name: 'purrito', species: 'cat'},
+    {id: 47, name: 'bob', species: 'fish'},
+    {id: 49, name: 'nacho', species: 'dog'}
+];
+
+function isDog(item) {
+    return item.species === 'dog';
+}
+
+var firstDogIndex = findIndex(isDog, pets);
 
 
 function findIndex(predicate, theArray) {
-
+  
+  var index=-1;
+  
+  for(var i=0;i<theArray.length;i++){
+    
+    if(predicate(theArray[i])){
+      index = i;
+      return index;
+     }
+  }
+     
+return index;
 }
 
+var firstDogIndex = findIndex(isDog, pets);
+
+// ***************COMMENTS******************
+// Pets is an array containing objects, and the properties of these objects can only be accessed with a function (specially designed for the specific values).
+
+
+
+console.log(firstDogIndex);
+
 function first(n, theArray) {
+
+var elements=[];
+
+if(typeof n === "object"){
+  return n[0];
+}
+
+else if(n>theArray.length){
+  return theArray;
+}
+else if(n<0) {
+ return elements;
+}
+for(var i=0;i<n;i++){
+  var newNum=theArray[i];
+  elements.push(newNum);
+}
+ return elements;
 
 }
 
 function last(n, theArray) {
+
+var elements=[];
+
+if(typeof n === "object"){
+  return n[n.length-1];
+}
+
+else if(n>theArray.length){
+  return theArray;
+}
+else if(n<0) {
+ return elements;
+}
+for(var i=theArray.length-1;i>=0;i--){
+  var newNum=theArray[i];
+  elements.push(newNum);
+}
+ return elements;
+
 
 }
 
