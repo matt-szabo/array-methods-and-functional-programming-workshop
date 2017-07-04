@@ -35,7 +35,7 @@ function isEven(x) {
     return x % 2 === 0;
 }
 
-var values = [1,10,15,16,32,33,34,35,36];
+//var values = [1,10,15,16,32,33,34,35,36];
 
 function filter(predicate,theArray) {
 
@@ -45,7 +45,7 @@ function filter(predicate,theArray) {
       
       if(predicate(item)){
       
-      //var newItem=theArray[count];
+
       tempa.push(item);
       }
       });
@@ -53,14 +53,35 @@ function filter(predicate,theArray) {
 return tempa;
 }
 
-var evenValues = filter(isEven,values); // 
+//var evenValues = filter(isEven,values); 
 
-console.log(evenValues);
+//console.log(evenValues);
 
+/*Make this function return:
 
-function every(predicate, theArray) {
+true if all the elements in the input array pass the predicate function
+false otherwise.
+If passed an empty array, then return true.
+To get the full points on this exercise, your every function has to stop as soon as it 
+encounters an item for which the predicate function returns false. You don't need to go any further.*/
 
+function every(predicate, theArray){
+  
+  for(var i=0;i<theArray.length;i++){
+    
+    if(!predicate(theArray[i])){
+      
+      return false;
+     }
+  }
+      return true;
+   
+ 
+  
 }
+
+
+
 
 function some(predicate, theArray) {
 
