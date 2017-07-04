@@ -75,17 +75,35 @@ function every(predicate, theArray){
      }
   }
       return true;
-   
- 
+  
+}
+
+/*
+Make this function return:
+
+true if at least one element in the input array passes the predicate function
+false otherwise.
+If passed an empty array, then return false.
+To get the full points on this exercise, your some function has to stop as soon 
+as it encounters an item for which the predicate function returns true. You don't need to go any further.*/
+
+function some(predicate, theArray) {
+
+  for(var i=0;i<theArray.length;i++){
+    
+    if(predicate(theArray[i]))
+    {
+      return true;
+     }
+  }
+
+return false;
   
 }
 
 
 
 
-function some(predicate, theArray) {
-
-}
 
 function indexOf(item, theArray) {
 
