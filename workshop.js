@@ -101,13 +101,43 @@ return false;
   
 }
 
+/*
+Make this function return the index of the first item in the input array that is === to the input item. If no item in the input array is === to the input item, then return -1. For example:
+*/
+
+
 
 
 
 
 function indexOf(item, theArray) {
-
+  var index = -1;
+    if(typeof theArray === "undefined" && theArray == null && theArray.length < 0)
+    {
+      return index;
+    };
+  
+  for(var i=0;i<theArray.length;i++){
+    
+   if(theArray[i]===item){
+    index=i;
+    return index;
+    }
+  
+  }  //end of for loop
+  
+return index;
 }
+
+var fruits = ['orange','apple','banana','apple'];
+
+var i = indexOf('apple', fruits); // 1
+console.log(i);
+var j = indexOf('pineapple', fruits); // -1
+console.log(j);
+
+//indexOf('anything', [])); // -1
+
 
 function findIndex(predicate, theArray) {
 
