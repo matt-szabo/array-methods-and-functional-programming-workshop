@@ -225,15 +225,17 @@ if(typeof n === "object"){
 else if(n>theArray.length){
   return theArray;
 }
+
 else if(n<0) {
  return elements;
 }
-for(var i=theArray.length-1;i>=0;i--){
-  var newNum=theArray[i];
+
+for(var i=0;i<n;i++){
+  var newNum=theArray[theArray.length-1-i];
   elements.push(newNum);
 }
- return elements;
 
+ return elements.reverse();
 
 }
 
