@@ -7,10 +7,30 @@ function forEach(callback, theArray) {
   }
   
 }
+function multiplyByTwo(x) {
+    return x * 2;
+}
+
+var values = [1,2,3,4];
 
 function map(mappingFunction, theArray) {
-
+  
+      var tempa=[];
+      theArray.forEach(function(item){
+        var newItem=mappingFunction(item);
+      
+      tempa.push(newItem);
+      });
+      
+return tempa;
+    // You write the code here
 }
+
+var doubleValues = map(multiplyByTwo, values); // [2,20,30,32]
+
+console.log(doubleValues);
+
+
 
 function filter(predicate, theArray) {
 
