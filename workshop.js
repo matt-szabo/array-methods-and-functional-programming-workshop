@@ -239,11 +239,28 @@ for(var i=0;i<n;i++){
 
 }
 
+var pets = [
+    {id: 33, owner: 'nyancat', name: 'popcorn', species: 'dog'},
+    {id: 46, name: 'purrito', species: 'cat'},
+    {id: 47, name: 'bob', species: 'fish'},
+    {id: 49, owner: 'nyancat', name: 'nacho', species: 'dog'}
+];
+
+
+
 function pluck(property, arrayOfObjects) {
 
+    var findings = [];
+    for(var i = 0; i < arrayOfObjects.length; i++) {
+      findings.push(arrayOfObjects[i][property]);
+    }
+    return findings;
 }
 
 function flatten(theArray) {
+
+return theArray.join();
+
 
 }
 
