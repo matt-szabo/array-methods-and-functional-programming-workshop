@@ -272,16 +272,50 @@ function flatten(theArray) {
 }
 
 function negate1(predicate) {
+  
+  return function(arg) {
+        return !predicate(arg);
+    };
 
 }
 
 function negate2(predicate) {
 
+console.log(arguments,"negate2 arguments");
+
+return function () {
+  console.log(arguments,"callback arguments");
+        return !predicate.apply(null, arguments);
+    };
+
 }
 
 function compose1(fun1, fun2) {
-
+return function(n){
+return fun1(fun2(n))
 }
+}
+
+  
+/*
+function compose1(fun1, fun2) {
+    // Your code
+}
+
+function fun1(str) {
+    return str.toUpperCase();
+}
+function shout(str) {
+    return str + '!!!';
+}
+
+var screamAndShout = compose1(shout, scream);
+
+screamAndShout('Hello World'); // HELLO WORLD!!!
+
+*/
+
+
 
 function compose2(arrOfFuncs) {
 
