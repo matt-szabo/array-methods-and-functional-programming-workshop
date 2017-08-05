@@ -281,10 +281,10 @@ function negate1(predicate) {
 
 function negate2(predicate) {
 
-console.log(arguments,"negate2 arguments");
+//console.log(arguments,"negate2 arguments");
 
 return function () {
-  console.log(arguments,"callback arguments");
+ // console.log(arguments,"callback arguments");
         return !predicate.apply(null, arguments);
     };
 
